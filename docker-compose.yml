@@ -10,7 +10,6 @@ services:
             - .env.docker
         volumes:
             - .:/var/www/html
-            - storage_data:/var/www/html/storage/app/public
     db:
         image: mysql:8
         container_name: sakhai_db
@@ -20,9 +19,3 @@ services:
             MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
         ports:
             - "3390:3306"
-        volumes:
-            - db_data:/var/lib/mysql
-
-volumes:
-    storage_data:
-    db_data:
